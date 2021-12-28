@@ -1,0 +1,17 @@
+defgrammar LispGrammar do
+  defrule program, do: expression* __eof__
+
+  defrule expression do
+    open_paren expression* close_paren
+    atom
+    string
+  end
+
+  deftoken open_paren,  do: "("
+  deftoken close_paren, do: ")"
+  deftoken atom,        do: /[^\(\)\s]+/
+  deftoken string,      do: /"[^"]*"/
+
+  deftoken comment,     do: /;.*/ -> in hidden
+  deftoken whitespace,  do: /\s+/ -> in hidden
+end

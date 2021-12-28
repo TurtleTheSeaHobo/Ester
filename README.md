@@ -2,10 +2,13 @@
 
 Elixir-based programming language processing framework.
 
-Ester provides tools for creating grammers (both lexical and syntactical),
-parsers, and compilers for programming languages. It doesn't matter what you're
-starting from or what you're trying to output: if you can formally describe it, 
-it will work.
+Ester provides tools for creating grammers and parsers for programming 
+languages. It doesn't matter what you're starting from or what you're 
+trying to output: if you can formally describe it, it will work.
+
+Ester primarily abstracts away the need to work with `:leex` and `:yecc`
+directly, providing a much more powerful and Elixir-like approach to
+generating lexer/parser systems. 
 
 ## Installation
 
